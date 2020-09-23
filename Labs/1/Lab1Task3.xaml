@@ -1,0 +1,42 @@
+﻿<Window x:Class="GraphicsPractice.Labs._1.Lab1Task3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+        mc:Ignorable="d"
+        Title="Lab1Task3" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer VerticalScrollBarVisibility="Disabled" Grid.Column="0">
+            <StackPanel Margin="5">
+                <Label HorizontalAlignment="Center" FontSize="15px" FontWeight="Bold">Params</Label>
+                <GroupBox Header="a" Canvas.Top="30" Canvas.Left="10">
+                    <TextBox x:Name="ParamA" Text="5"/>
+                </GroupBox>
+                <GroupBox Header="Scale" Canvas.Top="30" Canvas.Left="10">
+                    <StackPanel>
+                        <Label Content="{Binding ElementName=ScaleSlider, Path=Value }" HorizontalAlignment="Center"></Label>
+                        <Slider IsSnapToTickEnabled="True"  Value="50" Minimum="1" Maximum="100" TickFrequency="1" x:Name="ScaleSlider" AutoToolTipPlacement="TopLeft" TickPlacement="BottomRight" SmallChange="1"/>
+                    </StackPanel>
+                </GroupBox>
+                
+                <GroupBox Header="Quality" Canvas.Top="30" Canvas.Left="10">
+                    <StackPanel>
+                        <Label Content="{Binding ElementName=ParamB, Path=Value}" HorizontalAlignment="Center"></Label>
+                        <Slider  Value="3" Minimum="0.01" Maximum="2" TickFrequency="0.01" x:Name="ParamB" AutoToolTipPlacement="TopLeft" TickPlacement="BottomRight" SmallChange="0.01"></Slider>
+                    </StackPanel>
+                        
+                </GroupBox>
+                <CheckBox Margin="22" IsChecked="true" x:Name="AxisCheckbox">Draw the axis</CheckBox>
+                <Button Padding="5" BorderBrush="Aquamarine" Background="White"  VerticalAlignment="Bottom" Click="DrawScene">Draw</Button>
+            </StackPanel>
+        </ScrollViewer>
+        <Grid Grid.Column="1" x:Name="ImageWrapper">
+            <Image x:Name="ImageControl" Source="/Resources/kitten.jpg" Stretch="UniformToFill"></Image>
+        </Grid>
+    </Grid>
+</Window>

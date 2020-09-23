@@ -1,0 +1,33 @@
+﻿<Window x:Class="GraphicsPractice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GraphicsPractice"
+        mc:Ignorable="d"
+        Title="Alex Graphics Labs" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <ScrollViewer>
+                <StackPanel Margin="5">
+                    <Label HorizontalAlignment="Center" FontSize="15px" FontWeight="Bold">Alex Labs</Label>
+                    <GroupBox Header="Lab 1" Height="80" Canvas.Top="30" Canvas.Left="10">
+                        <DockPanel>
+                            <Button x:Name="L1T1"  Click="LabPick" Content="1" Margin="5" Width="32" Height="32" Padding="5" HorizontalAlignment="Left" BorderBrush="Aquamarine"/>
+                            <Button  x:Name="L1T2"  Click="LabPick" Content="2" Margin="5" Width="32" Height="32" Padding="5" HorizontalAlignment="Left" BorderBrush="Aquamarine"/>
+                            <Button  x:Name="L1T3"  Click="LabPick" Content="3" Margin="5" Width="32" Height="32" Padding="5" HorizontalAlignment="Left" BorderBrush="Aquamarine"/>
+                        </DockPanel>
+                    </GroupBox>
+                  
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Image Margin="0"  Stretch="UniformToFill" Source="/Resources/cat.jpg"/>
+        </Grid>
+    </Grid>
+</Window>
