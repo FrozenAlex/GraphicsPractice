@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GraphicsPractice.Labs._3"
         mc:Ignorable="d"
-        Title="Lab3Task1" Height="450" Loaded="Window_Loaded" Width="800">
+        Title="Lab3Task1" Height="450" Loaded="Window_Loaded" Width="800" SizeChanged="Window_SizeChanged">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>

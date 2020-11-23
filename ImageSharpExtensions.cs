@@ -1,5 +1,6 @@
 ﻿using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats.Bmp;
+using SixLabors.ImageSharp.PixelFormats;
 using System.IO;
 using System.Windows.Media.Imaging;
 
@@ -31,5 +32,10 @@ namespace GraphicsPractice
 
             return bitmap;
         }
+
+        public static Image<Rgba32> SetupCanvas(int width, int height)
+        {
+            return new Image<Rgba32>(width, height);
+        }     
     }
 }

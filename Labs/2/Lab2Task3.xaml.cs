@@ -19,6 +19,7 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Threading;
 using System.Diagnostics;
+using GraphicsPractice.Common;
 
 namespace GraphicsPractice.Labs._2
 {
@@ -45,26 +46,9 @@ namespace GraphicsPractice.Labs._2
         PointF offset;
         int width, height;
 
-        public class Line
-        {
-            public PointF start;
-            public PointF end;
-            public Line(PointF start, PointF end)
-            {
-                this.start = start;
-                this.end = end;
-            }
+        
 
-            public PointF Center()
-            {
-                return new PointF(
-                    (this.start.X + this.end.X) / 2,
-                    (this.start.Y + this.end.Y) / 2
-             );
-            }
-        }
-
-        List<Line> lines = new List<Line>();
+        List<Line2D> lines = new List<Line2D>();
         public Lab2Task3()
         {
             InitializeComponent();
@@ -87,10 +71,10 @@ namespace GraphicsPractice.Labs._2
             if (image != null)
             {
                 // Spawn lines
-                lines.Add(new Line(new PointF(-50, -50), new PointF(-100, -100)));
-                lines.Add(new Line(new PointF(50, 50), new PointF(100, 100)));
-                lines.Add(new Line(new PointF(-50, 50), new PointF(-100, 100)));
-                lines.Add(new Line(new PointF(50, -50), new PointF(100, -100)));
+                lines.Add(new Line2D(new PointF(-50, -50), new PointF(-100, -100)));
+                lines.Add(new Line2D(new PointF(50, 50), new PointF(100, 100)));
+                lines.Add(new Line2D(new PointF(-50, 50), new PointF(-100, 100)));
+                lines.Add(new Line2D(new PointF(50, -50), new PointF(100, -100)));
             }
         }
 
@@ -117,10 +101,10 @@ namespace GraphicsPractice.Labs._2
                     var points = new List<PointF>();
 
                     ///
-                    var displayLines = lines.ConvertAll<Line>((line) =>
+                    var displayLines = lines.ConvertAll<Line2D>((line) =>
                     {
                         // Transform origin
-                        return new Line(
+                        return new Line2D(
                             new PointF(line.start.X + width / 2, line.start.Y * -1 + height / 2),
                             new PointF(line.end.X + width / 2, line.end.Y * -1 + height / 2)
                         );
