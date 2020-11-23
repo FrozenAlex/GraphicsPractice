@@ -42,7 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Labs\2\" />
+    <Folder Include="Common\" />
   </ItemGroup>
 
 </Project>

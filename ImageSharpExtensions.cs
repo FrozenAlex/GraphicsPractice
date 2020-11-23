@@ -12,7 +12,7 @@ namespace GraphicsPractice
             // Possible memory leak?
             // Create memory stream
             MemoryStream ms = new MemoryStream();
-            
+
             // Create encoder
             var encoder = new BmpEncoder
             {

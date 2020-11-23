@@ -1,0 +1,24 @@
+﻿<Window x:Class="GraphicsPractice.Labs._2.Lab2Task1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GraphicsPractice.Labs._2"
+        mc:Ignorable="d"
+        Title="Lab2Task1" Height="450" Width="800" Loaded="Window_Loaded" Closing="Window_Closed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="4*"/>
+    </Grid.ColumnDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Disabled" Grid.Column="0">
+        <StackPanel Margin="5">
+                <Label HorizontalAlignment="Center" FontSize="15px" FontWeight="Bold">Params</Label>
+                <Button Padding="5" BorderBrush="Aquamarine" Background="White"  VerticalAlignment="Bottom" Click="DrawScene">Draw</Button>
+        </StackPanel>
+    </ScrollViewer>
+    <Grid Grid.Column="1" x:Name="ImageWrapper">
+        <Image x:Name="ImageControl" Source="/Resources/kitten.jpg" Stretch="UniformToFill"></Image>
+    </Grid>
+    </Grid>
+</Window>

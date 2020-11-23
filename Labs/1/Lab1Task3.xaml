@@ -27,7 +27,7 @@
                 <GroupBox Header="Quality" Canvas.Top="30" Canvas.Left="10">
                     <StackPanel>
                         <Label Content="{Binding ElementName=ParamB, Path=Value}" HorizontalAlignment="Center"></Label>
-                        <Slider  Value="3" Minimum="0.01" Maximum="2" TickFrequency="0.01" x:Name="ParamB" AutoToolTipPlacement="TopLeft" TickPlacement="BottomRight" SmallChange="0.01"></Slider>
+                        <Slider  Value="0.01" Minimum="0.01" Maximum="2" TickFrequency="0.01" x:Name="ParamB" AutoToolTipPlacement="TopLeft" TickPlacement="BottomRight" SmallChange="0.01"></Slider>
                     </StackPanel>
                         
                 </GroupBox>

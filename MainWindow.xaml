@@ -22,7 +22,21 @@
                             <Button  x:Name="L1T3"  Click="LabPick" Content="3" Margin="5" Width="32" Height="32" Padding="5" HorizontalAlignment="Left" BorderBrush="Aquamarine"/>
                         </DockPanel>
                     </GroupBox>
-                  
+
+                    <GroupBox Header="Lab 2" Height="80" Canvas.Top="30" Canvas.Left="10">
+                        <DockPanel>
+                            <Button x:Name="L2T1"  Click="LabPick" Content="1" Margin="5" Width="32" Height="32" Padding="5" HorizontalAlignment="Left" BorderBrush="Aquamarine"/>
+                            <Button  x:Name="L2T2"  Click="LabPick" Content="2" Margin="5" Width="32" Height="32" Padding="5" HorizontalAlignment="Left" BorderBrush="Aquamarine"/>
+                            <Button  x:Name="L2T3"  Click="LabPick" Content="3" Margin="5" Width="32" Height="32" Padding="5" HorizontalAlignment="Left" BorderBrush="Aquamarine"/>
+                        </DockPanel>
+                    </GroupBox>
+                    <GroupBox Header="Lab 3" Height="80" Canvas.Top="30" Canvas.Left="10">
+                        <DockPanel>
+                            <Button x:Name="L3T1"  Click="LabPick" Content="1" Margin="5" Width="32" Height="32" Padding="5" HorizontalAlignment="Left" BorderBrush="Aquamarine"/>
+                            <Button  x:Name="L3T2"  Click="LabPick" Content="2" Margin="5" Width="32" Height="32" Padding="5" HorizontalAlignment="Left" BorderBrush="Aquamarine"/>
+                            <Button  x:Name="L3T3"  Click="LabPick" Content="3" Margin="5" Width="32" Height="32" Padding="5" HorizontalAlignment="Left" BorderBrush="Aquamarine"/>
+                        </DockPanel>
+                    </GroupBox>
                 </StackPanel>
             </ScrollViewer>
         </Grid>

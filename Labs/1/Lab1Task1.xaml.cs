@@ -40,8 +40,8 @@ namespace GraphicsPractice.Labs._1
                     image.Mutate((x) =>
                     {
                         // Define pens and inks
-                        var sss = new Pen(Rgba32.ParseHex("#FFC0CB"), 10, new float[]{ 2f, 6f, 8f });
-                       
+                        var sss = new Pen(Rgba32.ParseHex("#FFC0CB"), 10, new float[] { 2f, 6f, 8f });
+
                         var pinkPen = Pens.Solid(Rgba32.ParseHex("#FFC0CB"), 10);
                         var greenPen = Pens.Solid(Rgba32.ParseHex("#228B22"), 10);
                         var blackPen = Pens.Solid(Rgba32.ParseHex("#000000"), 10);
@@ -49,32 +49,33 @@ namespace GraphicsPractice.Labs._1
 
 
                         Image img = Image.Load("Resources\\cat.jpg");
-                        img.Mutate((x) => {
+                        img.Mutate((x) =>
+                        {
                             x.Resize(
                                 128,
-                                (x.GetCurrentSize().Height/x.GetCurrentSize().Width)*128);
+                                (x.GetCurrentSize().Height / x.GetCurrentSize().Width) * 128);
                         });
                         var CatBrush = new ImageBrush(img);
-                       
+
 
                         // Draw a Line
-                        x.DrawLines(pinkPen, new PointF[] { 
+                        x.DrawLines(pinkPen, new PointF[] {
                             new PointF(30, 30),
                             new PointF(100, 30)
                         });
 
                         // Draw a Triangle
-                        x.FillPolygon(CatBrush, new PointF[] { 
+                        x.FillPolygon(CatBrush, new PointF[] {
                             new PointF(50, 50),
                             new PointF(500, 30),
                             new PointF(555, 555),
                         });
 
                         // Draw a star x y numberofcorners innerradius outerradius
-                        Star star = new Star(50,50,5,50,100);
+                        Star star = new Star(50, 50, 5, 50, 100);
                         var staroutline = Outliner.GenerateOutline(star, 2, JointStyle.Round);
                         x.Fill(CatBrush, star);
-                      
+
                         // Draw an arc
                         var arc = new Polygon(new CubicBezierLineSegment(new PointF[] {
                             new PointF(10, 400),
@@ -91,7 +92,7 @@ namespace GraphicsPractice.Labs._1
 
                     // Set the source
                     ImageControl.Source = Helpers.ImageToBitmap(image);
-                }  
+                }
             }
         }
 

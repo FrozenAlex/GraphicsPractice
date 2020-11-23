@@ -73,7 +73,6 @@ namespace GraphicsPractice.Labs._1
                     // Draw triangle
                     image.Mutate((ctx) =>
                     {
-                       
                         offset = new PointF(width / 2, height / 2);
 
                         // Define pens and inks
@@ -85,14 +84,12 @@ namespace GraphicsPractice.Labs._1
 
                         var points = new List<PointF>();
 
-                        
-  
                         try
                         {
                             // Get parameter a
                             float a = float.Parse(ParamA.Text);
                             // Quality and scale
-                            float quality = (float) ParamB.Value;
+                            float quality = (float)ParamB.Value;
                             scale = (float)ScaleSlider.Value;
 
                             if (AxisCheckbox.IsChecked == true)
@@ -130,17 +127,13 @@ namespace GraphicsPractice.Labs._1
                                 }
                             }
 
-
                             ctx.DrawLines(pinkPen, points.ToArray());
-                        } catch (Exception err)
-                        {
-                            
                         }
-                        
+                        catch (Exception err)
+                        {
 
-                        
+                        }
                     });
-
 
                     // Set the source
                     ImageControl.Source = Helpers.ImageToBitmap(image);
@@ -157,7 +150,7 @@ namespace GraphicsPractice.Labs._1
 
             // Scale the cell size up until it's sane
             var cellSize = 1;
-            while (cellSize*scale < 50)
+            while (cellSize * scale < 50)
             {
                 cellSize++;
             }
@@ -185,7 +178,7 @@ namespace GraphicsPractice.Labs._1
                     ctx.DrawLines(blackTransPen, new PointF[] { new PointF(0, i), new PointF(width, i) });
 
                     // skip drawing 0 twice
-                    if (y!= 0)
+                    if (y != 0)
                     {
                         ctx.DrawText(y.ToString(), font, new Rgba32(22, 33, 45, 66), new PointF(XToScreen(0), i));
                     }
