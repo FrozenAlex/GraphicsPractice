@@ -14,6 +14,7 @@ namespace GraphicsPractice.Common
         public static Pen pinkPen = Pens.Solid(Rgba32.ParseHex("#C0C0FF"), 2);
         public static Pen greenPen = Pens.Solid(Rgba32.ParseHex("#228B22"), 1);
         public static Pen blackPen = Pens.Solid(Rgba32.ParseHex("#000000"), 1);
+        public static Pen bluePen = Pens.Solid(Rgba32.ParseHex("#0000FF"), 1);
         public static Pen blackTransPen = Pens.Solid(Rgba32.ParseHex("#00005050"), 1);
     }
 }

@@ -17,6 +17,41 @@ namespace GraphicsPractice.Common
             this.Y = y;
             this.Z = z;
         }
+
+        public Point3D rotate(float pitch, float roll, float yaw)
+        {
+            float cosa = MathF.Cos(yaw);
+            float sina = MathF.Sin(yaw);
+
+            float cosb = MathF.Cos(pitch);
+            float sinb = MathF.Sin(pitch);
+
+            float cosc = MathF.Cos(roll);
+            float sinc = MathF.Sin(roll);
+
+            float Axx = cosa * cosb;
+            float Axy = cosa * sinb * sinc - sina * cosc;
+            float Axz = cosa * sinb * cosc + sina * sinc;
+
+            float Ayx = sina * cosb;
+            float Ayy = sina * sinb * sinc + cosa * cosc;
+            float Ayz = sina * sinb * cosc - cosa * sinc;
+
+            float Azx = -sinb;
+            float Azy = cosb * sinc;
+            float Azz = cosb * cosc;
+
+
+            float px = this.X;
+            float py = this.Y;
+            float pz = this.Z;
+
+            X = Axx * px + Axy * py + Axz * pz;
+            Y = Ayx * px + Ayy * py + Ayz * pz;
+            Z = Azx * px + Azy * py + Azz * pz;
+            
+            return this;
+        }
     }
 
     public class Line2D

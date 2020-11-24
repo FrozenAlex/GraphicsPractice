@@ -64,7 +64,7 @@ namespace GraphicsPractice.Labs._3
             // Start timer
             dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(nextFrame);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 64);  // 15 FPS
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 32);  // 15 FPS
             dispatcherTimer.Start();
         }
 
@@ -105,10 +105,15 @@ namespace GraphicsPractice.Labs._3
             int width = image.Width;
             int height = image.Height;
 
-            float angle = 1f;
+          
+
+            Point3D temp = new Point3D(point.X, point.Y, point.Z);
+            temp.Y = -temp.Y; // Fix Y
+            temp.rotate(0.5f,2f,0.2f);
+
 
             // Simple transform ignoring the 3d part
-            return new PointF(point.X*100+ width/2, point.Y*100 + height/2);
+            return new PointF(temp.X*50+ (float)(width/2), temp.Y*50 + (float)(height/2));
         }
 
         /// <summary>
@@ -147,12 +152,13 @@ namespace GraphicsPractice.Labs._3
         /// </summary>
         public void FixedUpdate()
         {
-            float angle = 0.1f;
             lines.ForEach((line) =>
             {
-                var center = new PointF(line.end.X, line.end.Y);
-                float cos = MathF.Cos(angle);
-                float sin = MathF.Sin(angle);
+                Point3D temp = line.start;
+                line.start = temp.rotate(0, 0.1f, 0.1f);
+                
+                temp = line.end;
+                line.end = temp.rotate(0, 0.1f, 0.1f);
             });
         }
 
@@ -168,12 +174,26 @@ namespace GraphicsPractice.Labs._3
 
             image.Mutate((ctx)=>
             {
+                ctx.Clear(new Color(Rgba32.ParseHex("#FFFFFF")));
                 // Put your image render code here
                 lines.ForEach((line) =>
                 {
                     ctx.DrawLines(DrawingKit.blackPen, new PointF[] { ToScreenSpace(line.start), ToScreenSpace(line.end) });
                 });
 
+
+                /// Z
+                ctx.DrawLines(DrawingKit.bluePen, new PointF[] {
+                   ToScreenSpace(new Point3D(0,0,-1)),  ToScreenSpace(new Point3D(0,0,1))
+                });
+                /// X
+                ctx.DrawLines(DrawingKit.pinkPen, new PointF[] {
+                   ToScreenSpace(new Point3D(1,0,0)),  ToScreenSpace(new Point3D(-1,0,0))
+                });
+                /// Y
+                ctx.DrawLines(DrawingKit.greenPen, new PointF[] {
+                   ToScreenSpace(new Point3D(0,1,0)),  ToScreenSpace(new Point3D(0,-1,0))
+                });
             });
 
             return image;

@@ -141,7 +141,6 @@ namespace GraphicsPractice.Labs._2
                         new PointF( width/2, 0),
                         new PointF(width/2, height)
                     });
-
                 });
 
                 ImageControl.Source = Helpers.ImageToBitmap(image);
