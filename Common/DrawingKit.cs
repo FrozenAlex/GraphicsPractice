@@ -17,4 +17,28 @@ namespace GraphicsPractice.Common
         public static Pen bluePen = Pens.Solid(Rgba32.ParseHex("#0000FF"), 1);
         public static Pen blackTransPen = Pens.Solid(Rgba32.ParseHex("#00005050"), 1);
     }
+
+    public static class SkiaKit
+    {
+        public static SkiaSharp.SKPaint blackPaint = new SkiaSharp.SKPaint()
+        {
+            Color = SkiaSharp.SKColor.Parse("#000")
+        };
+
+        public static SkiaSharp.SKPaint redPaint = new SkiaSharp.SKPaint()
+        {
+            Color = SkiaSharp.SKColor.Parse("#F00")
+        };
+
+        public static SkiaSharp.SKPaint greenPaint = new SkiaSharp.SKPaint()
+        {
+            Color = SkiaSharp.SKColor.Parse("#0F0")
+        };
+
+        public static SkiaSharp.SKPaint bluePaint = new SkiaSharp.SKPaint()
+        {
+            Color = SkiaSharp.SKColor.Parse("#00F")
+        };
+
+    }
 }

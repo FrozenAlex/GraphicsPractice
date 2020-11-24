@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:skia="clr-namespace:SkiaSharp.Views.WPF;assembly=SkiaSharp.Views.WPF"
         xmlns:local="clr-namespace:GraphicsPractice.Labs._3"
         mc:Ignorable="d"
         Title="Lab3Task1" Height="450" Loaded="Window_Loaded" Width="800" SizeChanged="Window_SizeChanged">
@@ -14,11 +15,13 @@
         <ScrollViewer VerticalScrollBarVisibility="Disabled" Grid.Column="0">
             <StackPanel Margin="5">
                 <Label HorizontalAlignment="Center" FontSize="15px" FontWeight="Bold">Params</Label>
-                <Button Padding="5" BorderBrush="Aquamarine" Background="White"  VerticalAlignment="Bottom" Click="DrawScene">Draw</Button>
+                <Button Padding="5" BorderBrush="Aquamarine" Background="White"  VerticalAlignment="Bottom">Draw</Button>
             </StackPanel>
         </ScrollViewer>
         <Grid Grid.Column="1" x:Name="ImageWrapper">
-            <Image x:Name="ImageControl" Source="/Resources/kitten.jpg" Stretch="UniformToFill"></Image>
+            <skia:SKElement x:Name="canvasView"
+                           PaintSurface="canvasView_PaintSurface" />
+            <!--<Image x:Name="ImageControl" Source="/Resources/kitten.jpg" Stretch="UniformToFill"></Image>-->
         </Grid>
     </Grid>
 </Window>
